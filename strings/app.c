@@ -1,18 +1,24 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    /*
-     * char * name = "Yoni"; means that you can change the item in the variable
-     * later char name[4] = "Yoni"; mean that you can't change the value later
-     * and that the item in the string/array has to be 4 charters long
-     */
+    char * name = "Bob";
 
-    char * name = "Yoni";
+    printf("%lu\n", strlen(name));
 
-    printf("%s\n", name);
+    if (strncmp(name, "Yoni", 4) == 0) {
+      printf("Hello, Yoni!\n");
+    } else {
+      printf("You are not Yoni. Go away.\n");
+    }
 
-    name = "test";
 
-    printf("%s", name);
+    char dest[20]="Hello";
+    char src[20]="World";
+    strncat(dest,src,5);
+    printf("%s\n",dest);
+    strncat(dest,src,20);
+    printf("%s\n",dest);
+
     return 0;
 };
