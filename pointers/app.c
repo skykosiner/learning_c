@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main() {
     /* define a local variable a */
@@ -14,7 +15,12 @@ int main() {
     printf("The value a is %d\n", a);
     printf("The value of a is also %d\n", *pointer_to_a);
 
-    printf("The value a is %d\n", *nice);
+    //Check that nice is the same as b and not a or any other thing
+    if (nice == &b) {
+        return printf("The value nice is %d\n", *nice);
+    } else if (nice != &b){
+        return printf("The vale of nice is not the same as b it is %d\n", *nice);
+    }
 
     /* let's change the variable a */
     a += 69419;
